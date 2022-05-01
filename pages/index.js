@@ -5,6 +5,9 @@ import { client } from "../libs/client";
 export default function Home({ blog }) {
   return (
     <div>
+      <header>
+        <h1>Tech-DA</h1>
+      </header>
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>
