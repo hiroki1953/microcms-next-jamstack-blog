@@ -4,14 +4,18 @@ import { client } from "libs/client";
 import { Header } from "../components/Header/header";
 
 export default function Home({ blog }) {
+  console.log(blog);
   return (
     <div className="h-screen w-screen">
       <Header />
-      <ul>
+      <ul className="flex justify-center">
         {blog.map((blog) => (
-          <li key={blog.id}>
+          <li key={blog.id} className="m-5">
             <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
+              <a>
+                <img src={blog.image.url} alt="ダミー" className="w-60 h-50" />
+                {blog.title}
+              </a>
             </Link>
           </li>
         ))}
