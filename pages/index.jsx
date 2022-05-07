@@ -1,14 +1,12 @@
 // pages/index.js
 import Link from "next/link";
 import { client } from "libs/client";
+import { Header } from "../components/Header/header";
 
 export default function Home({ blog }) {
   return (
     <div className="h-screen w-screen">
-      <header className="h-20 flex justify-between items-center">
-        <h1 className="text-2xl m-8">Tech-DA</h1>
-        <img src="images/twitter.png" className="m-8 h-10 w-12"></img>
-      </header>
+      <Header />
       <ul>
         {blog.map((blog) => (
           <li key={blog.id}>

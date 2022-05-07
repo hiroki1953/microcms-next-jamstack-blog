@@ -1,16 +1,20 @@
 import { client } from "libs/client";
+import { Header } from "components/Header/header";
 
 export default function BlogId({ blog }) {
   return (
-    <main>
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-      />
-    </main>
+    <div>
+      <Header />
+      <main>
+        <h1>{blog.title}</h1>
+        <p>{blog.publishedAt}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${blog.body}`,
+          }}
+        />
+      </main>
+    </div>
   );
 }
 
