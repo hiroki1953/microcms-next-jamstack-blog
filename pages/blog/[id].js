@@ -1,4 +1,4 @@
-import { client } from "../../libs/client";
+import { client } from "libs/client";
 
 export default function BlogId({ blog }) {
   return (
