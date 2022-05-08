@@ -6,12 +6,6 @@ export default function BlogId({ blog }) {
   return (
     <div>
       <Header />
-      <div className="text-center flex justify-center bg-gray-200">
-        <Link href="/">
-          <a>トップ</a>
-        </Link>
-        /<p>{blog.title}</p>
-      </div>
       <main>
         <h1>{blog.title}</h1>
         <p>{blog.publishedAt}</p>
