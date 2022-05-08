@@ -8,7 +8,6 @@ export default function Home({ blog }) {
   return (
     <div className="h-screen w-screen">
       <Header />
-
       <div className="w-2/4 mx-auto my-5">
         <h2 className="text-2xl text-center">記事一覧</h2>
         <ul className="grid grid-cols-3">
