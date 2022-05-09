@@ -10,17 +10,17 @@ export default function Home({ blog }) {
     <div className="h-screen w-screen">
       <Header />
       <Nav />
-      <div className="w-2/4 mx-auto my-5">
-        <h2 className="text-2xl text-center">記事一覧</h2>
-        <ul className="grid grid-cols-3">
+      <div className="w-5/6	 mx-auto my-5">
+        <div className="grid grid-cols-3 place-items-center">
           {blog.map((blog) => (
-            <li key={blog.id} className="m-5">
+            <div key={blog.id} className="w-96 h-96 border-2 ">
+              <div className="">
               <Link href={`/blog/${blog.id}`}>
-                <a>
+                  <a className="inline-block">
                   <img
                     src={blog.image.url}
                     alt="ダミー"
-                    className="w-60 h-50"
+                      className="w-96 h-56"
                   />
                   {blog.title}
                 </a>
