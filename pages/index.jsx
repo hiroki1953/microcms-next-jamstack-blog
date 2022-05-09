@@ -6,6 +6,11 @@ import { Nav } from "components/Nav/nav";
 
 export default function Home({ blog }) {
   console.log(blog);
+  // const fillteTopTags = blog.filter((blog) => {
+  //   return blog.tags == "カテゴリー3";
+  // });
+  // console.log(fillteTopTags);
+
   return (
     <div className="h-screen w-screen">
       <Header />
@@ -15,19 +20,24 @@ export default function Home({ blog }) {
           {blog.map((blog) => (
             <div key={blog.id} className="w-96 h-96 border-2 ">
               <div className="">
-              <Link href={`/blog/${blog.id}`}>
+                <Link href={`/blog/${blog.id}`}>
                   <a className="inline-block">
-                  <img
-                    src={blog.image.url}
-                    alt="ダミー"
+                    <img
+                      src={blog.image.url}
+                      alt="ダミー"
                       className="w-96 h-56"
-                  />
-                  {blog.title}
-                </a>
-              </Link>
-            </li>
+                    />
+                  </a>
+                </Link>
+                <p className="text-center text-xl">{blog.title}</p>
+                <p>{blog.timestamp}</p>
+                <Link href="/">
+                  <a>{blog.tags}</a>
+                </Link>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
