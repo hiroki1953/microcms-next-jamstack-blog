@@ -5,6 +5,9 @@ import { Nav } from "components/Nav/nav";
 import { Posts } from "components/Posts/posts";
 
 export default function Home({ blog }) {
+  const fillterOthersTags = blog.filter((blog) => {
+    return blog.tags[0] === "others";
+  });
   console.log(blog);
   // const fillteTopTags = blog.filter((blog) => {
   //   return blog.pops === 1;
@@ -15,7 +18,7 @@ export default function Home({ blog }) {
     <div className="h-screen w-screen">
       <Header />
       <Nav />
-      <Posts posts={blog} />
+            <Posts posts={fillterOthersTags} />
     </div>
   );
 }
