@@ -5,6 +5,9 @@ import { Nav } from "components/Nav/nav";
 import { Posts } from "components/Posts/posts";
 
 export default function Home({ blog }) {
+  const fillterTopTags = blog.filter((blog) => {
+    return blog.tags[0] === "top";
+  });
   const fillterOthersTags = blog.filter((blog) => {
     return blog.tags[0] === "others";
   });
@@ -18,6 +21,10 @@ export default function Home({ blog }) {
     <div className="h-screen w-screen">
       <Header />
       <Nav />
+      <div className="w-[72.5rem] h-screen mx-auto my-5">
+        <div className="flex h-screen">
+          <div className="basis-2/3 flex flex-col">
+            <Tops tops={fillterTopTags} />
             <Posts posts={fillterOthersTags} />
     </div>
   );
